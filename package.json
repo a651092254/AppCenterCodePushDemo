@@ -7,11 +7,19 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "pod": "cd ios && pod install",
+    "displayKeys": "yarn disPlayIosKeys && yarn disPlayAndroidKeys",
+    "disPlayIosKeys": "appcenter codepush deployment list --app youngjuning/AppCenterCodePushDemo-iOS --displayKeys",
+    "disPlayAndroidKeys": "appcenter codepush deployment list --app youngjuning/AppCenterCodePushDemo-Android --displayKeys",
+    "release-react":"yarn release-react-ios && yarn release-react-android",
+    "release-react-ios": "appcenter codepush release-react --app youngjuning/AppCenterCodePushDemo-iOS",
+    "release-react-android": "appcenter codepush release-react --app youngjuning/AppCenterCodePushDemo-Android"
   },
   "dependencies": {
     "react": "16.9.0",
-    "react-native": "0.61.5"
+    "react-native": "0.61.5",
+    "react-native-code-push": "^6.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.6.2",
