@@ -5,12 +5,12 @@ import configReader from 'react-native-config-reader';
 
 const CodePushDeploymentKey = {
   ios: {
-    debug: '944zuIiRSds-ZZY6AQF82aRl0b1vUL_mMxiie',
+    debug: '',
     staging: '944zuIiRSds-ZZY6AQF82aRl0b1vUL_mMxiie',
     release: 'yyJfk2vtpLUUlOCg3FnvCcky9o4U1lEWR1UJV',
   },
   android: {
-    debug: 'tOncLvKACzzSkUaML9tCOUfPZxHVnobfaNIUe',
+    debug: '',
     releasestaging: 'tOncLvKACzzSkUaML9tCOUfPZxHVnobfaNIUe',
     release: 'Gtc4iXTPn24yu6CBrbl_V2GTy21xtdQyfm6x1',
   },
