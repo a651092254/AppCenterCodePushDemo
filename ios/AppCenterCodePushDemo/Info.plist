@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>CodePushDeploymentKey</key>
-	<string>944zuIiRSds-ZZY6AQF82aRl0b1vUL_mMxiie</string>
+	<string>$(CODEPUSH_KEY)</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
