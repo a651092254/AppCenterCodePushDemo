@@ -173,7 +173,7 @@ android {
         // NOTE: The naming convention for releaseStaging is significant due to http://t.cn/EAnyAzi
         releaseStaging.initWith(release)
         releaseStaging {
-            resValue "String", "CODEPUSH_KEY", '"tOncLvKACzzSkUaML9tCOUfPZxHVnobfaNIUe"'
+            resValue "String", "CodePushDeploymentKey", '"tOncLvKACzzSkUaML9tCOUfPZxHVnobfaNIUe"'
             // 解决三方包不知道打包debug还是release版本问题 http://t.cn/EAex4XH
             matchingFallbacks = ['release']
         }
