@@ -34,7 +34,6 @@ const codePushStatusDidChange = async syncStatus => {
       console.info('[CodePush] Awaiting user action.');
       break;
     case codePush.SyncStatus.DOWNLOADING_PACKAGE:
-      DeviceEventEmitter.emit('startCodePushSync');
       // 2 - 正在从CodePush服务器下载可用更新。
       console.info('[CodePush] Downloading package.');
       break;
