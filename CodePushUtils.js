@@ -1,5 +1,4 @@
-// http://t.cn/AipSVR08
-import {AppState, Platform, Alert, DeviceEventEmitter} from 'react-native';
+import {AppState, Platform, Alert} from 'react-native';
 import codePush from 'react-native-code-push';
 import configReader from 'react-native-config-reader';
 
