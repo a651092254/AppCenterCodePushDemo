@@ -9,20 +9,27 @@
     "test": "jest",
     "lint": "eslint .",
     "pod": "cd ios && pod install",
+    "gradle:clean": "cd android && ./gradlew clean",
+    "an:release": "yarn gradle:clean && cd android && ./gradlew app:assembleRelease",
+    "an:installRelease": "yarn gradle:clean && cd android && ./gradlew app:installRelease",
+    "an:staging": "yarn gradle:clean && cd android && ./gradlew assembleReleaseStaging",
+    "an:installStaging": "yarn gradle:clean && cd android && ./gradlew installReleaseStaging",
     "displayKeys": "yarn disPlayIosKeys && yarn disPlayAndroidKeys",
     "disPlayIosKeys": "appcenter codepush deployment list --app youngjuning/AppCenterCodePushDemo-iOS --displayKeys",
     "disPlayAndroidKeys": "appcenter codepush deployment list --app youngjuning/AppCenterCodePushDemo-Android --displayKeys",
-    "release-react":"yarn release-react-ios && yarn release-react-android",
+    "release-react": "yarn release-react-ios && yarn release-react-android",
     "release-react-ios": "appcenter codepush release-react --app youngjuning/AppCenterCodePushDemo-iOS",
-    "release-react-android": "appcenter codepush release-react --app youngjuning/AppCenterCodePushDemo-Android"
+    "release-react-android": "appcenter codepush release-react --app youngjuning/AppCenterCodePushDemo-Android --description 一个测试的更新"
   },
   "dependencies": {
     "react": "16.9.0",
     "react-native": "0.61.5",
-    "react-native-code-push": "^6.1.0"
+    "react-native-code-push": "^6.1.0",
+    "react-native-really-awesome-button": "^1.6.0"
   },
   "devDependencies": {
     "@babel/core": "^7.6.2",
+    "@babel/plugin-proposal-decorators": "^7.8.3",
     "@babel/runtime": "^7.6.2",
     "@react-native-community/eslint-config": "^0.0.5",
     "babel-jest": "^24.9.0",

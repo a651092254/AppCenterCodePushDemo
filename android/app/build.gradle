@@ -132,7 +132,7 @@ android {
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
-        versionName "1.0"
+        versionName "1.0.0"
     }
     splits {
         abi {
@@ -149,17 +149,33 @@ android {
             keyAlias 'androiddebugkey'
             keyPassword 'android'
         }
+        release {
+            storeFile file("release.keystore")
+            storePassword "codepush"
+            keyAlias "my-key-alias"
+            keyPassword "codepush"
+        }
     }
     buildTypes {
         debug {
             signingConfig signingConfigs.debug
+            // Note: CodePush updates should not be tested in Debug mode as they are overriden by the RN packager. However, because CodePush checks for updates in all modes, we must supply a key.
+            resValue "string", "CodePushDeploymentKey", '""'
         }
         release {
             // Caution! In production, you need to generate your own keystore file.
             // see https://facebook.github.io/react-native/docs/signed-apk-android.
-            signingConfig signingConfigs.debug
+            signingConfig signingConfigs.release
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+            resValue "string", "CodePushDeploymentKey", '"Gtc4iXTPn24yu6CBrbl_V2GTy21xtdQyfm6x1"'
+        }
+        // NOTE: The naming convention for releaseStaging is significant due to http://t.cn/EAnyAzi
+        releaseStaging.initWith(release)
+        releaseStaging {
+            resValue "String", "CODEPUSH_KEY", '"tOncLvKACzzSkUaML9tCOUfPZxHVnobfaNIUe"'
+            // 解决三方包不知道打包debug还是release版本问题 http://t.cn/EAex4XH
+            matchingFallbacks = ['release']
         }
     }
     // applicationVariants are e.g. debug, release
