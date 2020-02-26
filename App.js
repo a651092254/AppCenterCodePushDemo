@@ -1,25 +1,29 @@
-import React, {useEffect} from 'react';
-import {View, StyleSheet, Alert} from 'react-native';
+import React, {useEffect, useState} from 'react';
+import {View, StyleSheet, DeviceEventEmitter} from 'react-native';
 import codePush from 'react-native-code-push';
 import AwesomeButton from 'react-native-really-awesome-button';
-import {codePushSync, syncImmediate} from './CodePushUtils';
+import Spinner from 'react-native-loading-spinner-overlay';
+import {codePushSync, checkForUpdate} from './CodePushUtils';
 const App = () => {
   const clearUpdates = () => {
     codePush.clearUpdates();
   };
 
-  const checkForUpdate = async () => {
-    const update = await codePush.checkForUpdate();
-    if (!update) {
-      Alert.alert('提示', '已是最新版本');
-    } else {
-      syncImmediate();
-    }
-  };
-
   useEffect(() => {
     codePushSync();
-    console.info('[CodePush] UpdateMetadata', codePush.getUpdateMetadata());
+  }, []);
+
+  const [loading, setLoading] = useState(false);
+  useEffect(() => {
+    DeviceEventEmitter.addListener('startCodePushSync', () => {
+      setLoading(true);
+    });
+    DeviceEventEmitter.addListener('endCodePushSync', () => {
+      setLoading(false);
+    });
+    return () => {
+      DeviceEventEmitter.removeAllListeners();
+    };
   }, []);
 
   return (
@@ -28,6 +32,11 @@ const App = () => {
         Check For Update!
       </AwesomeButton>
       <AwesomeButton onPress={clearUpdates}>Clear Updates!</AwesomeButton>
+      <Spinner
+        visible={loading}
+        textContent={'下载更新'}
+        textStyle={{color: '#ffffff'}}
+      />
     </View>
   );
 };

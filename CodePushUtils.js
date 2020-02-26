@@ -1,6 +1,27 @@
 // http://t.cn/AipSVR08
-import {AppState} from 'react-native';
+import {AppState, Platform, Alert, DeviceEventEmitter} from 'react-native';
 import codePush from 'react-native-code-push';
+import configReader from 'react-native-config-reader';
+
+const CodePushDeploymentKey = {
+  ios: {
+    debug: '944zuIiRSds-ZZY6AQF82aRl0b1vUL_mMxiie',
+    staging: '944zuIiRSds-ZZY6AQF82aRl0b1vUL_mMxiie',
+    release: 'yyJfk2vtpLUUlOCg3FnvCcky9o4U1lEWR1UJV',
+  },
+  android: {
+    debug: 'tOncLvKACzzSkUaML9tCOUfPZxHVnobfaNIUe',
+    releasestaging: 'tOncLvKACzzSkUaML9tCOUfPZxHVnobfaNIUe',
+    release: 'Gtc4iXTPn24yu6CBrbl_V2GTy21xtdQyfm6x1',
+  },
+};
+
+const getDeploymentKey = () => {
+  const buildType = configReader.BUILD_TYPE.toLowerCase();
+  const deploymentKey = CodePushDeploymentKey[Platform.OS][buildType];
+  console.log('[CodePushUtils]', deploymentKey);
+  return deploymentKey;
+};
 
 const codePushStatusDidChange = async syncStatus => {
   switch (syncStatus) {
@@ -13,6 +34,7 @@ const codePushStatusDidChange = async syncStatus => {
       console.info('[CodePush] Awaiting user action.');
       break;
     case codePush.SyncStatus.DOWNLOADING_PACKAGE:
+      DeviceEventEmitter.emit('startCodePushSync');
       // 2 - 正在从CodePush服务器下载可用更新。
       console.info('[CodePush] Downloading package.');
       break;
@@ -55,7 +77,8 @@ const codePushDownloadDidProgress = progress => {
   // console.log(`${progress.receivedBytes} of ${progress.totalBytes} received.`);
 };
 
-export const syncImmediate = async () => {
+const syncImmediate = async () => {
+  const deploymentKey = getDeploymentKey();
   codePush.sync(
     {
       updateDialog: {
@@ -68,11 +91,22 @@ export const syncImmediate = async () => {
         optionalInstallButtonLabel: '更新',
         optionalUpdateMessage: '有一个可用的更新，你要下载它吗？',
       },
+      deploymentKey,
       installMode: codePush.InstallMode.IMMEDIATE,
     },
     codePushStatusDidChange,
     codePushDownloadDidProgress,
   );
+};
+
+export const checkForUpdate = async () => {
+  const deploymentKey = getDeploymentKey();
+  const update = await codePush.checkForUpdate(deploymentKey);
+  if (!update) {
+    Alert.alert('提示', '已是最新版本');
+  } else {
+    syncImmediate();
+  }
 };
 
 export const codePushSync = () => {

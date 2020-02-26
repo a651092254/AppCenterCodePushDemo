@@ -59,11 +59,15 @@
 		2D02E47B1E0B4A5D006451C7 /* AppCenterCodePushDemo-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AppCenterCodePushDemo-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* AppCenterCodePushDemo-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "AppCenterCodePushDemo-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A5D4FB314F7033A799C1303 /* libPods-AppCenterCodePushDemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AppCenterCodePushDemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C35534E9DE66F6F50567C77 /* Pods-AppCenterCodePushDemo.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppCenterCodePushDemo.staging.xcconfig"; path = "Target Support Files/Pods-AppCenterCodePushDemo/Pods-AppCenterCodePushDemo.staging.xcconfig"; sourceTree = "<group>"; };
 		5F953D756C17C98F2B99E970 /* Pods-AppCenterCodePushDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppCenterCodePushDemoTests.release.xcconfig"; path = "Target Support Files/Pods-AppCenterCodePushDemoTests/Pods-AppCenterCodePushDemoTests.release.xcconfig"; sourceTree = "<group>"; };
+		76181B342F4148FFB5EA49E2 /* Pods-AppCenterCodePushDemo-tvOSTests.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppCenterCodePushDemo-tvOSTests.staging.xcconfig"; path = "Target Support Files/Pods-AppCenterCodePushDemo-tvOSTests/Pods-AppCenterCodePushDemo-tvOSTests.staging.xcconfig"; sourceTree = "<group>"; };
+		95BE1EDE7E70E9355C76AD3D /* Pods-AppCenterCodePushDemoTests.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppCenterCodePushDemoTests.staging.xcconfig"; path = "Target Support Files/Pods-AppCenterCodePushDemoTests/Pods-AppCenterCodePushDemoTests.staging.xcconfig"; sourceTree = "<group>"; };
 		A4FC15ECA65AB45952FFAE75 /* Pods-AppCenterCodePushDemo-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppCenterCodePushDemo-tvOS.release.xcconfig"; path = "Target Support Files/Pods-AppCenterCodePushDemo-tvOS/Pods-AppCenterCodePushDemo-tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		B1AC57D1181BA75C58E57537 /* Pods-AppCenterCodePushDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppCenterCodePushDemo.release.xcconfig"; path = "Target Support Files/Pods-AppCenterCodePushDemo/Pods-AppCenterCodePushDemo.release.xcconfig"; sourceTree = "<group>"; };
 		CC425170CD670C2B914608FA /* Pods-AppCenterCodePushDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppCenterCodePushDemoTests.debug.xcconfig"; path = "Target Support Files/Pods-AppCenterCodePushDemoTests/Pods-AppCenterCodePushDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CC51CE52FB4EB792B40E3C05 /* libPods-AppCenterCodePushDemo-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AppCenterCodePushDemo-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DDC9F58981536E8069994B2D /* Pods-AppCenterCodePushDemo-tvOS.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppCenterCodePushDemo-tvOS.staging.xcconfig"; path = "Target Support Files/Pods-AppCenterCodePushDemo-tvOS/Pods-AppCenterCodePushDemo-tvOS.staging.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
 		F93E205ECF2F51B37CBAC2A0 /* libPods-AppCenterCodePushDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AppCenterCodePushDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -193,6 +197,10 @@
 				29B44DA938C92C19056F71ED /* Pods-AppCenterCodePushDemo-tvOSTests.release.xcconfig */,
 				CC425170CD670C2B914608FA /* Pods-AppCenterCodePushDemoTests.debug.xcconfig */,
 				5F953D756C17C98F2B99E970 /* Pods-AppCenterCodePushDemoTests.release.xcconfig */,
+				4C35534E9DE66F6F50567C77 /* Pods-AppCenterCodePushDemo.staging.xcconfig */,
+				DDC9F58981536E8069994B2D /* Pods-AppCenterCodePushDemo-tvOS.staging.xcconfig */,
+				76181B342F4148FFB5EA49E2 /* Pods-AppCenterCodePushDemo-tvOSTests.staging.xcconfig */,
+				95BE1EDE7E70E9355C76AD3D /* Pods-AppCenterCodePushDemoTests.staging.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -671,7 +679,7 @@
 		};
 		0D62070A2406772F00825F2E /* Staging */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B1AC57D1181BA75C58E57537 /* Pods-AppCenterCodePushDemo.release.xcconfig */;
+			baseConfigurationReference = 4C35534E9DE66F6F50567C77 /* Pods-AppCenterCodePushDemo.staging.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
@@ -690,7 +698,7 @@
 		};
 		0D62070B2406772F00825F2E /* Staging */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5F953D756C17C98F2B99E970 /* Pods-AppCenterCodePushDemoTests.release.xcconfig */;
+			baseConfigurationReference = 95BE1EDE7E70E9355C76AD3D /* Pods-AppCenterCodePushDemoTests.staging.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
@@ -710,7 +718,7 @@
 		};
 		0D62070C2406772F00825F2E /* Staging */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A4FC15ECA65AB45952FFAE75 /* Pods-AppCenterCodePushDemo-tvOS.release.xcconfig */;
+			baseConfigurationReference = DDC9F58981536E8069994B2D /* Pods-AppCenterCodePushDemo-tvOS.staging.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -738,7 +746,7 @@
 		};
 		0D62070D2406772F00825F2E /* Staging */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 29B44DA938C92C19056F71ED /* Pods-AppCenterCodePushDemo-tvOSTests.release.xcconfig */;
+			baseConfigurationReference = 76181B342F4148FFB5EA49E2 /* Pods-AppCenterCodePushDemo-tvOSTests.staging.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
