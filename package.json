@@ -19,7 +19,7 @@
     "disPlayAndroidKeys": "appcenter codepush deployment list --app youngjuning/AppCenterCodePushDemo-Android --displayKeys",
     "release-react": "yarn release-react-ios && yarn release-react-android",
     "release-react-ios": "appcenter codepush release-react --app youngjuning/AppCenterCodePushDemo-iOS",
-    "release-react-android": "appcenter codepush release-react --app youngjuning/AppCenterCodePushDemo-Android --description 一个测试的更新"
+    "release-react-android": "appcenter codepush release-react --app youngjuning/AppCenterCodePushDemo-Android"
   },
   "dependencies": {
     "react": "16.9.0",
